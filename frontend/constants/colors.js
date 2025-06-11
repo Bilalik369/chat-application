@@ -1,17 +1,16 @@
-//colors.js
-const COLORS = {
-    primary: "#1976D2", 
-    textPrimary: "#1a4971",
-    textSecondary: "#6d93b8", 
-    textDark: "#0d2b43", 
-    placeholderText: "#767676",
-    background: "#e3f2fd", 
-    cardBackground: "#f5f9ff",
-    inputBackground: "#f0f8ff", 
-    border: "#bbdefb",
-    white: "#ffffff",
-    black: "#000000",
-  };
-  
 
-  export default COLORS;
+const COLORS = {
+  primary: "#DCD7C9",          
+  textPrimary: "#6B5B4A",     
+  textSecondary: "#A59985",    
+  textDark: "#4A4231",         
+  placeholderText: "#B0AA9E", 
+  background: "#F7F5EF",       
+  cardBackground: "#E6E1D9",   
+  inputBackground: "#F0EFE9", 
+  border: "#C7C1B5",           
+  white: "#FFFFFF",           
+  black: "#000000",           
+};
+
+export default COLORS;
