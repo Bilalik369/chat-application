@@ -8,6 +8,8 @@ import {
   Image,
   Alert,
   ActivityIndicator,
+  KeyboardAvoidingView ,
+  Platform
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useAuth } from '../context/AuthContext.js';
@@ -62,6 +64,8 @@ const LoginScreen = ({ navigation }) => {
   };
 
   return (
+    <KeyboardAvoidingView style={{flex : 1}}
+    behavior= {Platform.OS === "ios" ? "padding" : "height"}>
     <ScrollView 
       contentContainerStyle={loginStyles.container}
       style={loginStyles.scrollViewStyle}
@@ -169,6 +173,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
       </View>
     </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 

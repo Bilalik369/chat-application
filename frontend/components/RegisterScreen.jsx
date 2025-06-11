@@ -7,6 +7,8 @@ import {
   ScrollView,
   Alert,
   ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useAuth } from '../context/AuthContext.js';
@@ -64,6 +66,9 @@ const SignupScreen = ({ navigation }) => {
   };
 
   return (
+    <KeyboardAvoidingView style={{ flex: 1 }}
+    behavior={Platform.OS === "ios" ? "padding" : "height"}>
+
     <ScrollView 
       contentContainerStyle={signupStyles.container}
       showsVerticalScrollIndicator={false}
@@ -225,6 +230,7 @@ const SignupScreen = ({ navigation }) => {
         </View>
       </View>
     </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
