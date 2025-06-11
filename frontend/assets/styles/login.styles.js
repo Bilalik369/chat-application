@@ -96,7 +96,7 @@ const loginStyles = StyleSheet.create({
     elevation: 2,
   },
   buttonText: {
-    color: COLORS.white,
+    color: COLORS.test,
     fontSize: 16,
     fontWeight: "600",
   },

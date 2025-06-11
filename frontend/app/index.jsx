@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { Link } from "expo-router";
-import { useAuth } from "../context/AuthContext"; // بدل import
+import { useAuth } from "../context/AuthContext"; 
 
 export default function Index() {
-  const { user, logout } = useAuth(); // بدل useContext
+  const { user, logout } = useAuth(); 
 
   return (
     <View style={styles.container}>

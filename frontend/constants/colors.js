@@ -10,7 +10,8 @@ const COLORS = {
   inputBackground: "#F0EFE9", 
   border: "#C7C1B5",           
   white: "#FFFFFF",           
-  black: "#000000",           
+  black: "#000000",
+  test : "#6B5B4A"           
 };
 
 export default COLORS;
