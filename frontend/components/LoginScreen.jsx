@@ -15,7 +15,14 @@ import { validateForm } from '../utils/validation.js';
 import loginStyles from '../assets/styles/login.styles.js';
 
 
+import { useRouter } from 'expo-router';
+
+
+
+
+
 const LoginScreen = ({ navigation }) => {
+  const router = useRouter();
   const { login, isLoading } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
@@ -156,7 +163,7 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={loginStyles.footer}>
           <Text style={loginStyles.footerText}>Pas de compte ?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+          <TouchableOpacity onPress={() => router.push('/signup')}>
             <Text style={loginStyles.link}>S inscrire</Text>
           </TouchableOpacity>
         </View>

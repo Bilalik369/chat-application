@@ -12,8 +12,12 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useAuth } from '../context/AuthContext.js';
 import { validateForm } from '../utils/validation.js';
 import signupStyles from '../assets/styles/signup.styles';
+import {useRouter} from "expo-router";
+
+
 
 const SignupScreen = ({ navigation }) => {
+    const router = useRouter()
   const { signup, isLoading } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
@@ -31,7 +35,7 @@ const SignupScreen = ({ navigation }) => {
       [field]: value
     }));
     
-    // Clear error when user starts typing
+   
     if (errors[field]) {
       setErrors(prev => ({
         ...prev,
@@ -215,7 +219,7 @@ const SignupScreen = ({ navigation }) => {
 
         <View style={signupStyles.footer}>
           <Text style={signupStyles.footerText}>Déjà un compte ?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <TouchableOpacity onPress={() => router.push("login")}>
             <Text style={signupStyles.link}>Se connecter</Text>
           </TouchableOpacity>
         </View>
