@@ -1,51 +1,34 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Link } from 'expo-router';
+import styles from '../assets/styles/home.styles';
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bienvenue dans l'application</Text>
+     
+      <Image 
+        source={require('../assets/images/Mobile-bro.png')} 
+        style={styles.image}
+        resizeMode="contain"
+      />
+
+      
+      <Text style={styles.welcomeText}>Welcome to our Chat App!</Text>
+
       
       <Link href="/login" asChild>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Se connecter</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
       </Link>
+
       
       <Link href="/signup" asChild>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Créer un compte</Text>
+          <Text style={styles.buttonText}>Create Account</Text>
         </TouchableOpacity>
       </Link>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    padding: 16,
-    backgroundColor: '#f5f5f5'
-  },
-  title: { 
-    fontSize: 24, 
-    marginBottom: 24, 
-    fontWeight: 'bold',
-    color: '#333'
-  },
-  button: { 
-    backgroundColor: '#007AFF', 
-    paddingVertical: 12, 
-    paddingHorizontal: 32, 
-    borderRadius: 8, 
-    marginVertical: 8 
-  },
-  buttonText: { 
-    color: 'white', 
-    fontSize: 18,
-    textAlign: 'center'
-  }
-});

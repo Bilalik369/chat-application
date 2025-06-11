@@ -110,7 +110,7 @@ const loginStyles = StyleSheet.create({
     marginRight: 5,
   },
   link: {
-    color: COLORS.primary,
+    color: COLORS.test,
     fontWeight: "600",
   },
 });

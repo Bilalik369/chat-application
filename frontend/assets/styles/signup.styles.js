@@ -28,7 +28,7 @@ const signupStyles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "700",
     fontFamily: "JetBrainsMono-Medium",
-    color: COLORS.primary,
+    color: COLORS.test,
     marginBottom: 8,
   },
   subtitle: {
@@ -82,7 +82,7 @@ const signupStyles = StyleSheet.create({
     elevation: 2,
   },
   buttonText: {
-    color: COLORS.white,
+    color: COLORS.test,
     fontSize: 16,
     fontWeight: "600",
   },
@@ -96,7 +96,7 @@ const signupStyles = StyleSheet.create({
     marginRight: 5,
   },
   link: {
-    color: COLORS.primary,
+    color: COLORS.test,
     fontWeight: "600",
   },
 });

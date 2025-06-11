@@ -1,4 +1,4 @@
-
+//constant/colors.js
 const COLORS = {
   primary: "#DCD7C9",          
   textPrimary: "#6B5B4A",     
