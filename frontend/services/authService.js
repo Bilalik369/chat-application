@@ -1,4 +1,6 @@
-const API_BASE_URL = 'http://your-backend-url:3000/api'; // Remplacez par votre URL
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const API_BASE_URL = 'http://localhost:3000'; 
 
 class AuthService {
   async login(email, password) {
@@ -60,8 +62,8 @@ class AuthService {
   }
 
   async logout() {
-    // Suppression du token local
-    // Si vous utilisez AsyncStorage : await AsyncStorage.removeItem('token');
+    
+    await AsyncStorage.removeItem('token');
     return { success: true };
   }
 }
