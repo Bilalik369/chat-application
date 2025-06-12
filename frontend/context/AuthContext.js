@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import authService from '../services/authService';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const AuthContext = createContext();
 
@@ -22,12 +24,12 @@ export const AuthProvider = ({ children }) => {
 
   const checkAuthStatus = async () => {
     try {
-      // Vérifier si un token existe dans le stockage local
-      // const storedToken = await AsyncStorage.getItem('token');
-      // if (storedToken) {
-      //   setToken(storedToken);
-      //   // Vérifier la validité du token avec le backend
-      // }
+   
+      const storedToken = await AsyncStorage.getItem('token');
+      if (storedToken) {
+        setToken(storedToken);
+        
+      }
     } catch (error) {
       console.error('Error checking auth status:', error);
     } finally {
@@ -43,7 +45,7 @@ export const AuthProvider = ({ children }) => {
       if (result.success) {
         setUser(result.user);
         setToken(result.token);
-        // await AsyncStorage.setItem('token', result.token);
+        await AsyncStorage.setItem('token', result.token);
         return { success: true };
       } else {
         return { success: false, error: result.error };
@@ -63,7 +65,7 @@ export const AuthProvider = ({ children }) => {
       if (result.success) {
         setUser(result.user);
         setToken(result.token);
-        // await AsyncStorage.setItem('token', result.token);
+        await AsyncStorage.setItem('token', result.token);
         return { success: true };
       } else {
         return { success: false, error: result.error };
@@ -80,7 +82,7 @@ export const AuthProvider = ({ children }) => {
       await authService.logout();
       setUser(null);
       setToken(null);
-      // await AsyncStorage.removeItem('token');
+      await AsyncStorage.removeItem('token');
     } catch (error) {
       console.error('Error during logout:', error);
     }
